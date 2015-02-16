@@ -51,6 +51,8 @@ function KenBurnsWebGLTrait (canvas) {
   this.buffer = gl.createBuffer();
 }
 KenBurnsWebGLTrait.prototype = {
+  clamped: true,
+  rgb: [0,0,0],
   runStart: function (image) {
     var gl = this.gl;
     var canvas = this.canvas;
