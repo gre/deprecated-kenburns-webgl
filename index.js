@@ -1,7 +1,3 @@
-var KenBurnsCore = require("kenburns-core");
-
-// TODO use gl-shader and gl-texture2d
-
 // WebGL implementation
 
 var vertexShaderSource =
@@ -109,5 +105,5 @@ KenBurnsWebGLTrait.prototype = {
   }
 };
 
-module.exports = KenBurnsCore.mixin(KenBurnsWebGLTrait);
+module.exports = KenBurnsWebGLTrait;
 
