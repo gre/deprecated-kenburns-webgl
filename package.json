@@ -1,6 +1,6 @@
 {
   "name": "kenburns-webgl",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Ken Burns Effect – WebGL implementation",
   "main": "index.js",
   "repository": {
@@ -17,6 +17,5 @@
     "url": "https://github.com/gre/kenburns-webgl/issues"
   },
   "homepage": "https://github.com/gre/kenburns-webgl",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
