@@ -49,6 +49,8 @@ function KenBurnsWebGLTrait (canvas) {
   this.dimL = gl.getUniformLocation(program, "dim");
   this.bgL = gl.getUniformLocation(program, "bg");
   this.buffer = gl.createBuffer();
+  this._lastW = canvas.width;
+  this._lastH = canvas.height;
 }
 KenBurnsWebGLTrait.prototype = {
   clamped: true,
@@ -94,6 +96,12 @@ KenBurnsWebGLTrait.prototype = {
   },
   draw: function (image, bound) {
     var gl = this.gl;
+    var canvas = this.canvas;
+    if (this._lastW !== canvas.width || this._lastH !== canvas.height) {
+      this._lastW = canvas.width;
+      this._lastH = canvas.height;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
     gl.uniform2f(this.posL, bound[0], bound[1]);
     gl.uniform2f(this.dimL, bound[2], bound[3]);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
