@@ -2,7 +2,15 @@
   "name": "kenburns-webgl",
   "version": "1.1.2",
   "description": "Ken Burns Effect – WebGL implementation",
-  "main": "index.js",
+  "main": "src/index.js",
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  },
+  "scripts": {
+    "test": "browserify test.js | testling -x open"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gre/kenburns-webgl"
@@ -17,5 +25,15 @@
     "url": "https://github.com/gre/kenburns-webgl/issues"
   },
   "homepage": "https://github.com/gre/kenburns-webgl",
-  "dependencies": {}
+  "dependencies": {
+    "gl-shader": "^4.0.1",
+    "glslify": "^2.1.2"
+  },
+  "devDependencies": {
+    "baboon-image": "^1.0.0",
+    "browserify": "^9.0.8",
+    "gl-texture2d": "^2.0.8",
+    "tape": "^4.0.0",
+    "testling": "^1.7.1"
+  }
 }
