@@ -1,14 +1,14 @@
 var glslify = require("glslify");
 var createShader = require("gl-shader");
 
+var vert = require("./main.vert");
+var frag = require("./main.frag");
+
 function KenBurnsWebGLTrait (gl) {
   if (!(this instanceof KenBurnsWebGLTrait)) return new KenBurnsWebGLTrait(gl);
   this.gl = gl;
 
-  this.shader = createShader(gl,
-    glslify('./main.vert'),
-    glslify('./main.frag')
-  );
+  this.shader = createShader(gl, vert, frag);
   this.buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
   gl.bufferData(
