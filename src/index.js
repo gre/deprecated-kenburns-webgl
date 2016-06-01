@@ -1,4 +1,3 @@
-var glslify = require("glslify");
 var createShader = require("gl-shader");
 
 var vert = require("./main.vert");
